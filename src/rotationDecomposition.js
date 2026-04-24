@@ -22,6 +22,21 @@ function toPlainQuaternion(quaternion) {
   };
 }
 
+export function normalizeQuaternion(quaternionLike) {
+  const quaternion = new THREE.Quaternion(
+    quaternionLike.x || 0,
+    quaternionLike.y || 0,
+    quaternionLike.z || 0,
+    quaternionLike.w ?? 1
+  );
+
+  if (quaternion.lengthSq() < 1e-12) {
+    return { x: 0, y: 0, z: 0, w: 1 };
+  }
+
+  return toPlainQuaternion(quaternion.normalize());
+}
+
 export function composeRootRotation({ yawZ = 0, pitchSide = 0, rollHeading = 0 }) {
   const euler = new THREE.Euler(
     rollHeading * DEG_TO_RAD,

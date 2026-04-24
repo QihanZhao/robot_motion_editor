@@ -4,7 +4,8 @@ import * as THREE from 'three';
 import {
   composeRootRotation,
   decomposeRootRotation,
-  getRootHeadingFromQuaternion
+  getRootHeadingFromQuaternion,
+  normalizeQuaternion
 } from '../src/rotationDecomposition.js';
 
 const EPSILON = 1e-6;
@@ -87,4 +88,11 @@ test('decomposeRootRotation round-trips editor angles through quaternion storage
   assertClose(decomposed.pitchSide, angles.pitchSide, 'pitchSide');
   assertClose(decomposed.rollHeading, angles.rollHeading, 'rollHeading');
   assertEquivalentQuaternion(recomposed, q, 'round trip');
+});
+
+test('normalizeQuaternion keeps direct quaternion edits on unit length', () => {
+  const q = normalizeQuaternion({ x: 0.2, y: -0.1, z: 0.3, w: 1 });
+  const length = Math.sqrt(q.x * q.x + q.y * q.y + q.z * q.z + q.w * q.w);
+
+  assertClose(length, 1, 'normalized quaternion length');
 });
