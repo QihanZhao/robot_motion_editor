@@ -45,6 +45,9 @@ const translations = {
     // 基体控制
     baseControl: '▶ 基体控制 (Base)',
     jointControl: '关节控制',
+    jointGroupCenter: '中',
+    jointGroupLeft: '左',
+    jointGroupRight: '右',
     reset: '重置',
     alignLowest: '平移对齐',
     alignLowestTitle: '自动调整XYZ，让高度最低的link与原始轨迹对齐',
@@ -239,6 +242,9 @@ const translations = {
     // Base control
     baseControl: '▶ Base Control (Base)',
     jointControl: 'Joint Control',
+    jointGroupCenter: 'Center',
+    jointGroupLeft: 'Left',
+    jointGroupRight: 'Right',
     reset: 'Reset',
     alignLowest: 'Align Lowest',
     alignLowestTitle: 'Auto-adjust XYZ to align the lowest link with the base trajectory',
