@@ -267,6 +267,10 @@ export class JointController {
       // 触发包络线防抖更新
       this.editor.scheduleFootprintUpdate();
     }
+
+    if (this.editor.updatePalmVisualizers) {
+      this.editor.updatePalmVisualizers();
+    }
     
     // 如果当前帧是关键帧，自动更新残差
     this.autoUpdateKeyframe();
