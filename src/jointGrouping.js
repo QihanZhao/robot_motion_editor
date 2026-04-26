@@ -1,7 +1,7 @@
 export const JOINT_GROUPS = [
-  { key: 'center', labelKey: 'jointGroupCenter', fallbackLabel: '中' },
-  { key: 'left', labelKey: 'jointGroupLeft', fallbackLabel: '左' },
-  { key: 'right', labelKey: 'jointGroupRight', fallbackLabel: '右' }
+  { key: 'center', labelKey: 'jointGroupCenter', fallbackLabel: 'Center' },
+  { key: 'left', labelKey: 'jointGroupLeft', fallbackLabel: 'Left' },
+  { key: 'right', labelKey: 'jointGroupRight', fallbackLabel: 'Right' }
 ];
 
 export function getJointGroupKey(jointName = '') {

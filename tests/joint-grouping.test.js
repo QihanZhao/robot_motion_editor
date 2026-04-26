@@ -25,5 +25,6 @@ assert.deepEqual(Object.keys(grouped), JOINT_GROUPS.map((group) => group.key));
 assert.deepEqual(grouped.center.map((item) => item.index), [1, 3]);
 assert.deepEqual(grouped.left.map((item) => item.index), [0]);
 assert.deepEqual(grouped.right.map((item) => item.index), [2]);
+assert.deepEqual(JOINT_GROUPS.map((group) => group.fallbackLabel), ['Center', 'Left', 'Right']);
 
 console.log('Joint grouping tests passed');

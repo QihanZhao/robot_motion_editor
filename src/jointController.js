@@ -197,7 +197,11 @@ export class JointController {
     `;
 
     const label = document.createElement('span');
-    label.textContent = `${i18n.t(group.labelKey) || group.fallbackLabel} (${count})`;
+    const labelText = document.createElement('span');
+    labelText.dataset.i18n = group.labelKey;
+    labelText.textContent = i18n.t(group.labelKey) || group.fallbackLabel;
+    label.appendChild(labelText);
+    label.appendChild(document.createTextNode(` (${count})`));
     header.appendChild(label);
 
     const icon = document.createElement('span');
